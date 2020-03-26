@@ -1,1 +1,22 @@
-<p>pokemons-page works!</p>
+<div [ngSwitch]="view">
+  <div fxLayoutAlign="end" class="pokemons-page__buttons-view">
+    <button mat-icon-button (click)="toggleView('gallery')">
+      <mat-icon class="pokemons-page__icon-view">view_module</mat-icon>
+    </button>
+    <button mat-icon-button (click)="toggleView('list')">
+      <mat-icon class="pokemons-page__icon-view">view_list</mat-icon>
+    </button>
+  </div>
+  <ng-template ngSwitchCase="gallery">
+    <div fxLayout="row wrap" fxLayoutAlign="space-around">
+      <div *ngFor="let pokemon of pokemons">
+        <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template ngSwitchCase="list">
+    <div *ngFor="let pokemon of pokemons">
+      <app-pokemon-list-item [pokemon]="pokemon"></app-pokemon-list-item>
+    </div>
+  </ng-template>
+</div>
