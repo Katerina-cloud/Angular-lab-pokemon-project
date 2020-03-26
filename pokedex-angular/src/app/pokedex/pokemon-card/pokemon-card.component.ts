@@ -15,7 +15,7 @@ export class PokemonCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  isDamaged(pokemon) {
+  isDamaged(pokemon: Pokemon): boolean {
     return pokemon.damage > 50;
   }
 }

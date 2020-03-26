@@ -10,12 +10,13 @@ import { Pokemon } from '../types/Pokemon';
 export class PokemonsPageComponent implements OnInit {
   pokemons: Pokemon[] = pokemonsArray;
   view: string = "gallery";
-  toggleView(viewType: string) {
-    this.view = viewType;
-  }
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleView(viewType: string): void {
+    this.view = viewType;
+  }
 }

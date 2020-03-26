@@ -14,13 +14,13 @@ export class CatchButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  catch(pokemon) {
+  catch(pokemon: Pokemon): void {
     pokemon.isCaught = !pokemon.isCaught;
     const status: string = pokemon.isCaught ? "пойман" : "отпущен";
     console.log(`Покемон ${pokemon.name} был ${status}`);
   }
 
-  getStatus(pokemon) {
+  getStatus(pokemon: Pokemon): string {
     return pokemon.isCaught ? "Release" : "Catch";
   }
 }
