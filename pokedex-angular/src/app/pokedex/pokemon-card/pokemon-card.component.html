@@ -1,5 +1,4 @@
-<mat-card class="pokemon-card" [class.pokemon-card__damaged]="isDamaged(pokemon)"
-  [class.pokemon-card__not-damaged]="!isDamaged(pokemon)">
+<mat-card class="pokemon-card" [border-style]="pokemon.damage">
   <mat-card-header class="pokemon-card__header">
     <mat-card-title>{{pokemon.name}}</mat-card-title>
     <mat-card-subtitle class="pokemon-card__damage">Damage: {{pokemon.damage}}</mat-card-subtitle>
