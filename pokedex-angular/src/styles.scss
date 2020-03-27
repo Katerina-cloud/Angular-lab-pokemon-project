@@ -3,7 +3,8 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.display-inline-block {
-  display: inline-block;
+.pokemon-list-item .mat-list-item-content {
+  justify-content: space-between;
 }
+
 

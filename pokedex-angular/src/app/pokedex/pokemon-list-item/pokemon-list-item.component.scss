@@ -1,24 +1,13 @@
 @import "../../../variables";
 
 .pokemon-list-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: max-content;
   margin: auto;
   border-bottom: 1px solid $color-primary;
   width: 80vw;
 
-  &__avatar {
-    width: 20vh;
-    height: 20vh;
-    margin-right: 1vh;
-    margin-top: 1vh;
-  }
   &__name {
     text-transform: capitalize;
-    margin-right: 1vh;
+    margin-right: 10px;
     font-size: 20px;
     color: $color-tertiary;
     margin-bottom: 0;
@@ -26,9 +15,6 @@
   &__damage {
     color: $color-secondary;
     margin-bottom: 0;
-  }
-  &__catch-button {
-    margin-left: 1vh;
   }
 }
 
@@ -40,10 +26,8 @@
 
 @media (min-width: 576px) {
   .pokemon-list-item {
-    width: 50vw;
+    width: 55vw;
     &__name {
-      text-transform: capitalize;
-      margin-right: 1vh;
       font-size: 30px;
     }
   }

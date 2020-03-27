@@ -15,8 +15,8 @@
     </div>
   </ng-template>
   <ng-template ngSwitchCase="list">
-    <div *ngFor="let pokemon of pokemons">
+    <mat-list *ngFor="let pokemon of pokemons">
       <app-pokemon-list-item [pokemon]="pokemon"></app-pokemon-list-item>
-    </div>
+    </mat-list>
   </ng-template>
 </div>
