@@ -1,10 +1,10 @@
 import { Directive, ElementRef, Renderer2, Input } from '@angular/core';
 
 @Directive({
-  selector: '[border-style]'
+  selector: '[appBorderStyle]'
 })
 export class BorderBoldDirective {
-  @Input('border-style') damage: number;
+  @Input('appBorderStyle') damage: number;
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
 

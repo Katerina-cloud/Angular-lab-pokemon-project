@@ -11,7 +11,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { PokemonListItemComponent } from './pokemon-list-item/pokemon-list-item.component';
 import { CatchButtonComponent } from './catch-button/catch-button.component';
-import { BorderBoldDirective } from './pokemon-card/border-bold.directive'
+import { BorderBoldDirective } from './border-style.directive'
 
 @NgModule({
   declarations: [
