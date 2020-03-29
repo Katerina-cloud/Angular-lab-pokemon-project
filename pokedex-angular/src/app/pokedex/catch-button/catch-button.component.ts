@@ -16,8 +16,8 @@ export class CatchButtonComponent implements OnInit {
 
   catch(pokemon: Pokemon): void {
     pokemon.isCaught = !pokemon.isCaught;
-    const status: string = pokemon.isCaught ? "пойман" : "отпущен";
-    console.log(`Покемон ${pokemon.name} был ${status}`);
+    const status: string = pokemon.isCaught ? "caught" : "released";
+    console.log(`Pokemon ${pokemon.name} was ${status}`);
   }
 
   getStatus(pokemon: Pokemon): string {
