@@ -1,0 +1,11 @@
+@import "../../../variables.scss";
+
+.pokemons-page__icon-view {
+  font-size: 48px;
+  display: inline-block;
+  color: $color-secondary;
+}
+
+.pokemons-page__buttons-view {
+  margin: 5vh 0;
+}

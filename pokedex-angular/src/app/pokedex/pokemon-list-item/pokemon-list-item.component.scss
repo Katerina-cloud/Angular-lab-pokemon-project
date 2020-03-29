@@ -1,0 +1,31 @@
+@import "../../../variables";
+
+.pokemon-list-item {
+  margin: auto;
+  border-bottom: 1px solid $color-primary;
+  width: 80vw;
+
+  &__name {
+    text-transform: capitalize;
+    margin-right: 10px;
+    font-size: 20px;
+    color: $color-tertiary;
+    margin-bottom: 0;
+  }
+  &__damage {
+    color: $color-secondary;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .pokemon-list-item__info {
+    display: flex;
+  }
+}
+
+@media (min-width: 576px) {
+  .pokemon-list-item {
+    width: 55vw;
+  }
+}

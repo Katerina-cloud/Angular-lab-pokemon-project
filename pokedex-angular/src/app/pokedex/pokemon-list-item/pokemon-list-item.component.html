@@ -1,0 +1,8 @@
+<mat-list-item class="pokemon-list-item">
+  <img matListAvatar [src]='"../../../assets/pokemons/" + pokemon.id + ".png"' alt="pokemon image">
+  <div class="pokemon-list-item__info">
+    <h3 class="pokemon-list-item__name">{{pokemon.name}}</h3>
+    <h3 class="pokemon-list-item__damage">damage: {{pokemon.damage}}</h3>
+  </div>
+  <app-catch-button [pokemon]="pokemon"></app-catch-button>
+</mat-list-item>

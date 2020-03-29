@@ -1,1 +1,10 @@
-<p>pokemon-card works!</p>
+<mat-card class="pokemon-card" [appBorderStyle]="pokemon.damage">
+  <mat-card-header class="pokemon-card__header">
+    <mat-card-title>{{pokemon.name}}</mat-card-title>
+    <mat-card-subtitle class="pokemon-card__damage">Damage: {{pokemon.damage}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]='"../../../assets/pokemons/" + pokemon.id + ".png"' alt="pokemon image">
+  <mat-card-actions>
+    <app-catch-button [pokemon]="pokemon"></app-catch-button>
+  </mat-card-actions>
+</mat-card>

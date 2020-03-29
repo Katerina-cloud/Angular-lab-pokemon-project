@@ -1,0 +1,17 @@
+@import "../../../variables.scss";
+
+.pokemon-card {
+  max-width: 300px;
+  text-align: center;
+  margin-bottom: 32px;
+
+  &__header {
+    justify-content: center;
+    color: $color-tertiary;
+    text-transform: capitalize;
+  }
+
+  &__damage {
+    color: $color-secondary;
+  }
+}
