@@ -1,8 +1,10 @@
 export let pokemonsArray = [
   {
-    "name": "bulbazaur",
     "id": 1,
-    "damage": 50
+    "damage": 50,
+    "name": "bulbazaur",
+    "isCaught": true,
+    "catchDate": "2020-02-19T20:13:24.407Z",
   },
   {
     "name": "ivysaur",

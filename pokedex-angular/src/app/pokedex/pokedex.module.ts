@@ -4,14 +4,10 @@ import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { PokemonProfileComponent } from './pokemon-profile/pokemon-profile.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PokemonsPageComponent } from './pokemons-page/pokemons-page.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
 import { PokemonListItemComponent } from './pokemon-list-item/pokemon-list-item.component';
-import { CatchButtonComponent } from './catch-button/catch-button.component';
-import { BorderBoldDirective } from './border-style.directive'
+import { BorderBoldDirective } from './border-style.directive';
+import { BorderBottomDirective } from './border-style-bottom.directive';
+
 
 @NgModule({
   declarations: [
@@ -20,10 +16,10 @@ import { BorderBoldDirective } from './border-style.directive'
     NavbarComponent,
     PokemonsPageComponent,
     PokemonListItemComponent,
-    CatchButtonComponent,
-    BorderBoldDirective
+    BorderBoldDirective,
+    BorderBottomDirective
   ],
-  imports: [CommonModule, MatCardModule, MatButtonModule, FlexLayoutModule, MatListModule, MatIconModule],
+  imports: [CommonModule],
   exports: [PokemonProfileComponent,
     NavbarComponent,
     PokemonsPageComponent]

@@ -1,0 +1,71 @@
+@import "../../../variables.scss";
+
+.pokemon-profile {
+  border: none;
+  color: $color-tertiary;
+  background: $color-primary-light;
+
+  &__info {
+    align-self: center;
+  }
+
+  &__card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+
+  .list-group-item {
+    border: 1px solid rgba($color-white, 0.7);
+    background: $color-primary-light;
+  }
+
+  .list-group-flush .list-group-item {
+    border-right-width: 0;
+    border-left-width: 0;
+    border-radius: 0;
+  }
+  
+  .list-group-flush .list-group-item:first-child {
+    border-top-width: 0;
+  }
+}
+
+.catch-button {
+  height: 38px;
+  padding: 6px;
+  background: $color-secondary;
+  border-radius: 5px;
+  color: $color-white;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-primary, 0.2);
+    color: $color-white;
+    transition: all 0.2s;
+  }
+
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 1rem 2rem rgba($color-primary, 0.2);
+    color: $color-white;
+    transition: all 0.2s;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 100%;
+  }
+
+  &:disabled {
+    background: rgba($color-secondary, 0.5);
+
+    &:hover {
+      transform: none;
+    }
+
+    &:active {
+      transform: none;
+    }
+  }
+}
+

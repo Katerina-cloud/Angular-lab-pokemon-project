@@ -1,10 +1,10 @@
-<mat-card class="pokemon-card" [appBorderStyle]="pokemon.damage">
-  <mat-card-header class="pokemon-card__header">
-    <mat-card-title>{{pokemon.name}}</mat-card-title>
-    <mat-card-subtitle class="pokemon-card__damage">Damage: {{pokemon.damage}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image [src]='"../../../assets/pokemons/" + pokemon.id + ".png"' alt="pokemon image">
-  <mat-card-actions>
-    <app-catch-button [pokemon]="pokemon"></app-catch-button>
-  </mat-card-actions>
-</mat-card>
+<div class="card mb-3 pokemon-card" [appBorderStyle]="pokemon.damage">
+  <div class="card-body">
+    <div class="card-title pokemon-card__title">{{pokemon.name}}</div>
+    <div class="pokemon-card__damage">Damage: {{pokemon.damage}}</div>
+    <img class="card-img" [src]='"../../../assets/pokemons/" + pokemon.id + ".png"' alt="pokemon image">
+    <div class="pokemon-card__button">
+      <button class="btn catch-button col-lg-2 col-md-2" (click)="onCatchBtnClick()">{{getStatus(pokemon)}}</button>
+    </div>
+  </div>
+</div>
