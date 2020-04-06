@@ -3,8 +3,11 @@
     <button class="btn btn-outline-secondary" (click)="toggleView('gallery')">Gallery</button>
     <button class="btn btn-outline-secondary" (click)="toggleView('list')">List</button>
   </div>
+  <div class="pokemons-page__search">
+    <app-search-pokemon></app-search-pokemon>
+  </div>
   <ng-template ngSwitchCase="gallery">
-    <div class="row row-cols-3 justify-content-around pokemons-page__card">
+    <div class="row cols-3 cols-md-2 cols-sm-1 justify-content-around pokemons-page__card">
       <div *ngFor="let pokemon of pokemons">
         <app-pokemon-card [pokemon]="pokemon" (catchPoke)="pokemonPageCatchOnClick(pokemon)"></app-pokemon-card>
       </div>

@@ -1,20 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { pokemonsArray } from './testData/pokemons';
 import { Pokemon } from '../types/Pokemon';
+import { AccountsService } from '../accounts.service';
 
 @Component({
   selector: 'app-pokemons-page',
   templateUrl: './pokemons-page.component.html',
-  styleUrls: ['./pokemons-page.component.scss']
+  styleUrls: ['./pokemons-page.component.scss'],
+  providers: [AccountsService]
 })
 export class PokemonsPageComponent implements OnInit {
-  pokemons: Pokemon[] = pokemonsArray;
-  pokemon: Pokemon = pokemonsArray[0];
+  pokemons: Pokemon[] = [];
+  pokemon: Pokemon;
   view: string = "gallery";
 
-  constructor() { }
+  constructor(private accountsService: AccountsService) { }
 
   ngOnInit(): void {
+    this.pokemons = this.accountsService.getAll();
+    this.pokemon = this.accountsService.getById(1);
   }
 
   toggleView(viewType: string): void {
