@@ -4,7 +4,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @import "./variables.scss";
-
+.edit-button,
 .catch-button {
   height: 38px;
   padding: 6px;

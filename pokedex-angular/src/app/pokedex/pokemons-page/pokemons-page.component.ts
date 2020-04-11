@@ -29,4 +29,12 @@ export class PokemonsPageComponent implements OnInit {
     const status: string = pokemon.isCaught ? "caught" : "released";
     console.log(`Pokemon ${pokemon.name} was ${status}`);
   }
+
+  pokemonPageSearchOnClick(pokeName: string): void {
+    if (pokeName.length) {
+      this.pokemons = this.accountsService.filterByName(pokeName);
+    } else {
+      this.pokemons = this.accountsService.getAll();
+    }
+  }
 }

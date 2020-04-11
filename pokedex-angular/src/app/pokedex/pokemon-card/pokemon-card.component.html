@@ -1,10 +1,14 @@
 <div class="card mb-3 pokemon-card" [appBorderStyle]="pokemon.damage">
   <div class="card-body">
-    <div class="card-title pokemon-card__title">{{pokemon.name}}</div>
-    <div class="pokemon-card__damage">Damage: {{pokemon.damage}}</div>
-    <img class="card-img" [src]='"../../../assets/pokemons/" + pokemon.id + ".png"' alt="pokemon image">
+    <a [routerLink]="['/pokemon-profile', pokemon.id]">
+      <div class="card-title pokemon-card__title">{{pokemon.name}}</div>
+      <div class="pokemon-card__damage">Damage: {{pokemon.damage}}</div>
+      <img class="card-img" [src]='"../../../assets/pokemons/" + pokemon.id + ".png"' alt="pokemon image">
+    </a>
     <div class="pokemon-card__button">
-      <button class="btn catch-button col-lg-2 col-md-2" (click)="onCatchBtnClick()">{{getStatus(pokemon)}}</button>
+      <button class="btn catch-button col-lg-2 col-md-2 mb-3"
+        (click)="onCatchBtnClick()">{{getStatus(pokemon)}}</button>
+      <button class="btn edit-button col-lg-2 col-md-2">Edit</button>
     </div>
   </div>
 </div>

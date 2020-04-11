@@ -71,7 +71,7 @@ export class AccountsService {
     return this.pokemons;
   }
 
-  filterByName(pokeName): Pokemon[] {
+  filterByName(pokeName: string): Pokemon[] {
     let pokeByName = this.pokemons.filter(pokemon => {
       if (pokemon.name.includes(pokeName.toLowerCase())) {
         return pokemon;
@@ -80,7 +80,7 @@ export class AccountsService {
     return pokeByName;
   }
 
-  getById(pokeId): Pokemon {
+  getById(pokeId: number): Pokemon {
     let pokeById: Pokemon[] = this.pokemons.filter(pokemon => {
       if (pokemon.id === pokeId) {
         return pokemon;
