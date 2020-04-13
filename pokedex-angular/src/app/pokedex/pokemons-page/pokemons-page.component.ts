@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../types/Pokemon';
 import { AccountsService } from '../accounts.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-pokemons-page',
@@ -10,14 +12,23 @@ import { AccountsService } from '../accounts.service';
 })
 export class PokemonsPageComponent implements OnInit {
   pokemons: Pokemon[] = [];
-  pokemon: Pokemon;
+  querySubscription: Subscription;
+  searchName: string;
   view: string = "gallery";
 
-  constructor(private accountsService: AccountsService) { }
+  constructor(private accountsService: AccountsService, private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.pokemons = this.accountsService.getAll();
-    this.pokemon = this.accountsService.getById(1);
+    this.querySubscription = this.route.queryParams.subscribe(
+      (queryParam: any) => {
+        this.searchName = queryParam['name'];
+        if (this.searchName) {
+          this.pokemons = this.accountsService.filterByName(this.searchName);
+        } else {
+          this.pokemons = this.accountsService.getAll();
+        }
+      });
   }
 
   toggleView(viewType: string): void {
@@ -31,10 +42,15 @@ export class PokemonsPageComponent implements OnInit {
   }
 
   pokemonPageSearchOnClick(pokeName: string): void {
-    if (pokeName.length) {
-      this.pokemons = this.accountsService.filterByName(pokeName);
+    // if (pokeName.length) {
+    //   this.pokemons = this.accountsService.filterByName(pokeName);
+    // } else {
+    //   this.pokemons = this.accountsService.getAll();
+    // }
+    if (!pokeName) {
+      this.router.navigate(['/']);
     } else {
-      this.pokemons = this.accountsService.getAll();
+      this.router.navigate(['/'], { queryParams: { name: pokeName } });
     }
   }
 }
