@@ -2,14 +2,14 @@
 
 .pokemon-list-item {
   margin: auto;
-  width: 80vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border: none;
+  padding: 0.75rem 0;
 
   &__image {
-    width: 80px;
+    width: 60px;
   }
 
   &__name {
@@ -17,10 +17,12 @@
     margin-right: 10px;
     color: $color-tertiary;
     margin-bottom: 0;
+    font-size: 20px;
   }
   &__damage {
     color: $color-secondary;
     margin-bottom: 0;
+    font-size: 20px;
   }
 
   &__button {
@@ -28,14 +30,11 @@
   }
 }
 
-@media (min-width: 768px) {
-  .pokemon-list-item__info {
-    display: flex;
-  }
-}
-
 @media (min-width: 576px) {
   .pokemon-list-item {
     width: 55vw;
+    padding: 0.75rem 1.25rem;
   }
 }
+
+

@@ -3,5 +3,5 @@ export interface Pokemon {
   name: string;
   damage: number;
   isCaught?: boolean;
-  catchDate?: Date;
+  catchDate?: string;
 }
