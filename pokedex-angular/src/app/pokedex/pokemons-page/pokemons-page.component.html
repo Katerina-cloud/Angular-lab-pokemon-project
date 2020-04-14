@@ -1,22 +1,20 @@
-<div [ngSwitch]="view" class="container">
-  <div fxLayoutAlign="end" class="pokemons-page__buttons-view">
-    <button mat-icon-button (click)="toggleView('gallery')">
-      <mat-icon class="pokemons-page__icon-view">view_module</mat-icon>
-    </button>
-    <button mat-icon-button (click)="toggleView('list')">
-      <mat-icon class="pokemons-page__icon-view">view_list</mat-icon>
-    </button>
+<div [ngSwitch]="view" class="container mt-5 mb-5">
+  <div class="pokemons-page__buttons-view">
+    <button class="btn btn-outline-secondary" (click)="toggleView('gallery')">Gallery</button>
+    <button class="btn btn-outline-secondary" (click)="toggleView('list')">List</button>
   </div>
   <ng-template ngSwitchCase="gallery">
-    <div fxLayout="row wrap" fxLayoutAlign="space-around">
+    <div class="row row-cols-3 justify-content-around pokemons-page__card">
       <div *ngFor="let pokemon of pokemons">
-        <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+        <app-pokemon-card [pokemon]="pokemon" (catchPoke)="pokemonPageCatchOnClick(pokemon)"></app-pokemon-card>
       </div>
     </div>
   </ng-template>
   <ng-template ngSwitchCase="list">
-    <mat-list *ngFor="let pokemon of pokemons">
-      <app-pokemon-list-item [pokemon]="pokemon"></app-pokemon-list-item>
-    </mat-list>
+    <ul class="list-group" *ngFor="let pokemon of pokemons">
+      <app-pokemon-list-item [pokemon]="pokemon" (catchPoke)="pokemonPageCatchOnClick(pokemon)"></app-pokemon-list-item>
+    </ul>
   </ng-template>
+  <app-pokemon-profile [pokemon]="pokemon" (catchPoke)="pokemonPageCatchOnClick(pokemon)">
+  </app-pokemon-profile>
 </div>

@@ -2,16 +2,20 @@
 
 .pokemon-card {
   max-width: 300px;
-  text-align: center;
-  margin-bottom: 32px;
-
-  &__header {
-    justify-content: center;
-    color: $color-tertiary;
-    text-transform: capitalize;
-  }
+  border: 1px solid $color-primary;
 
   &__damage {
     color: $color-secondary;
   }
 }
+
+.pokemon-card__title {
+  color: $color-tertiary;
+  text-transform: capitalize;
+  font-size: 1.75rem;
+}
+
+.pokemon-card__button {
+  max-width: 100%;
+}
+

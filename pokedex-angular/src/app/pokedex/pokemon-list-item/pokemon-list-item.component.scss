@@ -2,19 +2,29 @@
 
 .pokemon-list-item {
   margin: auto;
-  border-bottom: 1px solid $color-primary;
   width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+
+  &__image {
+    width: 80px;
+  }
 
   &__name {
     text-transform: capitalize;
     margin-right: 10px;
-    font-size: 20px;
     color: $color-tertiary;
     margin-bottom: 0;
   }
   &__damage {
     color: $color-secondary;
     margin-bottom: 0;
+  }
+
+  &__button {
+    width: 100px;
   }
 }
 

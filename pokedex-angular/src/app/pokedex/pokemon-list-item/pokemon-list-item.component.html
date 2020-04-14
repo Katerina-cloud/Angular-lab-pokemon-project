@@ -1,8 +1,10 @@
-<mat-list-item class="pokemon-list-item">
-  <img matListAvatar [src]='"../../../assets/pokemons/" + pokemon.id + ".png"' alt="pokemon image">
+<li class="list-group-item pokemon-list-item" [appBorderBottomStyle]="pokemon.damage">
+  <img class="pokemon-list-item__image" [src]='"../../../assets/pokemons/" + pokemon.id + ".png"' alt="pokemon image">
   <div class="pokemon-list-item__info">
     <h3 class="pokemon-list-item__name">{{pokemon.name}}</h3>
     <h3 class="pokemon-list-item__damage">damage: {{pokemon.damage}}</h3>
   </div>
-  <app-catch-button [pokemon]="pokemon"></app-catch-button>
-</mat-list-item>
+  <div class="pokemon-list-item__button">
+    <button class="btn catch-button col-lg-2 col-md-2" (click)="onCatchBtnClick()">{{getStatus(pokemon)}}</button>
+  </div>
+</li>
