@@ -88,4 +88,12 @@ export class AccountsService {
     })
     return pokeById.pop();
   }
+
+  update(pokemon: Pokemon): void {
+    let pokemonToUpdate = this.pokemons.find(poke => poke.id === pokemon.id);
+    pokemonToUpdate.name = pokemon.name;
+    pokemonToUpdate.damage = pokemon.damage;
+    pokemonToUpdate.isCaught = pokemon.isCaught;
+    pokemonToUpdate.catchDate = pokemon.catchDate;
+  }
 }

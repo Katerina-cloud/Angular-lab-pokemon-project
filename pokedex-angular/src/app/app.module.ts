@@ -8,6 +8,7 @@ import { PokedexModule } from './pokedex/pokedex.module';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
 import { PokedexRoutingModule } from './pokedex/pokedex-routing.module';
+import { CanDeactivateGuard } from './pokedex/edit-info/can-deactivate-guard.service';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { PokedexRoutingModule } from './pokedex/pokedex-routing.module';
     PokedexModule,
     PokedexRoutingModule
   ],
-  providers: [],
+  providers: [CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

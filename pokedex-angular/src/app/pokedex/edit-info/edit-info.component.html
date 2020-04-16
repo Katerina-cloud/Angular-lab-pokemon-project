@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="edit-info mt-5 pt-5 pb-5">
+    <div class="col-md-5">
+      <img class="img-fluid" [src]='"../../../assets/pokemons/" + pokemon.id + ".png"' alt="pokemon image">
+    </div>
+    <form #infoEditForm="ngForm" (ngSubmit)="onSubmit(infoEditForm)" class=" col-md-5 edit-info__info form-group">
+      <div class="form-group row">
+        <label for="edit-info__name" class="col-sm-3 col-form-label">Name:</label>
+        <div class="col-sm-9">
+          <input class="form-control mb-3 edit-info__name" name="name" [(ngModel)]="pokemon.name" placeholder="Name" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="edit-info__damage" class="col-sm-3 col-form-label">Damage:</label>
+        <div class="col-sm-9">
+          <input class="form-control mb-3 edit-info__damage" name="damage" [(ngModel)]="pokemon.damage" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="edit-info__isCaught" class="col-sm-3 col-form-label">Catch status:</label>
+        <div class="col-sm-9">
+          <input class="form-control mb-3 edit-info__isCaught" name="isCaught" [(ngModel)]="pokemon.isCaught" />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="edit-info__catchDate" class="col-sm-3 col-form-label">Catch date:</label>
+        <div class="col-sm-9">
+          <input class="form-control mb-3 edit-info__catchDate" name="catchDate" [(ngModel)]="pokemon.catchDate" />
+        </div>
+      </div>
+      <input type="submit" class="btn button-block-white mt-5 mb-3 col-lg-2 col-md-2" value="Save" />
+      <input class="btn button-block-white col-lg-2 col-md-2" value="Cancel" />
+    </form>
+  </div>
+</div>
