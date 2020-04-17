@@ -6,8 +6,7 @@ import { AccountsService } from '../accounts.service';
 @Component({
   selector: 'app-pokemon-profile',
   templateUrl: './pokemon-profile.component.html',
-  styleUrls: ['./pokemon-profile.component.scss'],
-  providers: [AccountsService]
+  styleUrls: ['./pokemon-profile.component.scss']
 })
 export class PokemonProfileComponent implements OnInit {
   pokemon: Pokemon;

@@ -9,8 +9,7 @@ import { Observable } from 'rxjs/internal/Observable';
 @Component({
   selector: 'app-edit-info',
   templateUrl: './edit-info.component.html',
-  styleUrls: ['./edit-info.component.scss'],
-  providers: [AccountsService]
+  styleUrls: ['./edit-info.component.scss']
 })
 
 export class EditInfoComponent implements OnInit, CanComponentDeactivate {
@@ -47,12 +46,22 @@ export class EditInfoComponent implements OnInit, CanComponentDeactivate {
 
     this.accountsService.update(this.pokemon);
 
-    this.router.navigate(['/pokemon-profile', this.pokemon.id]);
-
     this.changesSaved = true;
+
+    this.router.navigate(['/pokemon-profile', this.pokemon.id]);
+  }
+
+  onCancel(): void {
+    this.changesSaved = false;
+    this.router.navigate(['/pokemon-profile', this.pokemon.id]);
   }
 
   canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-    return confirm('Do you want to save changes?');
+    if (this.changesSaved) {
+      alert('Changes saved.');
+      return true;
+    } else {
+      return confirm('Do you want to save changes?');
+    }
   }
 }

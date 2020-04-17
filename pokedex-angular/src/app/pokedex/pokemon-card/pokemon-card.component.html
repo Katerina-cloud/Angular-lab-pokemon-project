@@ -8,7 +8,9 @@
     <div class="pokemon-card__button">
       <button class="btn button-block col-lg-2 col-md-2 mb-3"
         (click)="onCatchBtnClick()">{{getStatus(pokemon)}}</button>
-      <button class="btn button-block col-lg-2 col-md-2">Edit</button>
+      <a [routerLink]="['/pokemon-profile', pokemon.id, 'edit']">
+        <button class="btn button-block col-lg-2 col-md-2">Edit</button>
+      </a>
     </div>
   </div>
 </div>
