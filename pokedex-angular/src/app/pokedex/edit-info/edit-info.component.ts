@@ -14,7 +14,9 @@ import { Observable } from 'rxjs/internal/Observable';
 
 export class EditInfoComponent implements OnInit, CanComponentDeactivate {
   pokemon: Pokemon;
-  changesSaved: boolean = false;
+  changesSaved = false;
+
+  @Output() catchPoke = new EventEmitter<Pokemon>();
 
   constructor(private accountsService: AccountsService, private route: ActivatedRoute,
     private router: Router) {
@@ -24,8 +26,6 @@ export class EditInfoComponent implements OnInit, CanComponentDeactivate {
     const id = this.route.snapshot.params.id;
     this.pokemon = this.accountsService.getById(Number(id));
   }
-
-  @Output() catchPoke = new EventEmitter<Pokemon>();
 
   formatCatchDate(date) {
     if (date) {
@@ -43,8 +43,6 @@ export class EditInfoComponent implements OnInit, CanComponentDeactivate {
     this.pokemon.damage = form.value.damage;
     this.pokemon.isCaught = form.value.isCaught;
     this.pokemon.catchDate = form.value.catchDate;
-
-    this.accountsService.update(this.pokemon);
 
     this.changesSaved = true;
 

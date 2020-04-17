@@ -1,7 +1,9 @@
 <div [ngSwitch]="view" class="container mt-5 mb-5">
   <div class="pokemons-page__buttons-view">
-    <button class="btn btn-outline-secondary" (click)="toggleView('gallery')">Gallery</button>
-    <button class="btn btn-outline-secondary" (click)="toggleView('list')">List</button>
+    <button class="btn btn-outline-secondary mr-1" [ngClass]="{active: galleryActive}" (click)="
+      toggleView('gallery')">Gallery</button>
+    <button class="btn btn-outline-secondary" [ngClass]="{active: listActive}" (click)="
+      toggleView('list')">List</button>
   </div>
   <div class="pokemons-page__search">
     <app-search-pokemon (filterPoke)="pokemonPageSearchOnClick($event)"></app-search-pokemon>

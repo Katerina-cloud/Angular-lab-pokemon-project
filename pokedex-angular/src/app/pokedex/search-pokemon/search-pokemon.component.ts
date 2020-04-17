@@ -8,16 +8,14 @@ import { NgForm } from '@angular/forms';
 })
 export class SearchPokemonComponent implements OnInit {
   name: string;
+  @Output() filterPoke = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  @Output() filterPoke = new EventEmitter<string>();
-
   onSubmit(form: NgForm) {
     this.filterPoke.emit(form.value.name);
   }
-
 }

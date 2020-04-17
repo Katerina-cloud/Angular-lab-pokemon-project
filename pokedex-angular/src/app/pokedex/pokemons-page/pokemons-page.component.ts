@@ -13,7 +13,9 @@ export class PokemonsPageComponent implements OnInit {
   pokemons: Pokemon[] = [];
   querySubscription: Subscription;
   searchName: string;
-  view: string = "gallery";
+  view = "gallery";
+  galleryActive = true;
+  listActive = false;
 
   constructor(private accountsService: AccountsService, private route: ActivatedRoute,
     private router: Router) { }
@@ -32,6 +34,13 @@ export class PokemonsPageComponent implements OnInit {
 
   toggleView(viewType: string): void {
     this.view = viewType;
+    if (viewType === "gallery") {
+      this.galleryActive = true;
+      this.listActive = false;
+    } else if (viewType === "list") {
+      this.galleryActive = false;
+      this.listActive = true;
+    }
   }
 
   pokemonPageCatchOnClick(pokemon: Pokemon): void {
@@ -41,11 +50,6 @@ export class PokemonsPageComponent implements OnInit {
   }
 
   pokemonPageSearchOnClick(pokeName: string): void {
-    // if (pokeName.length) {
-    //   this.pokemons = this.accountsService.filterByName(pokeName);
-    // } else {
-    //   this.pokemons = this.accountsService.getAll();
-    // }
     if (!pokeName) {
       this.router.navigate(['/']);
     } else {
