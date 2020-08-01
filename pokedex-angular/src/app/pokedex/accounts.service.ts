@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Pokemon } from './types/Pokemon';
 
-
 @Injectable({
   providedIn: 'root'
 })
+
 export class AccountsService {
 
   constructor() { }
@@ -72,16 +72,15 @@ export class AccountsService {
   }
 
   filterByName(pokeName: string): Pokemon[] {
-    let pokeByName = this.pokemons.filter(pokemon => {
+    return this.pokemons.filter(pokemon => {
       if (pokemon.name.includes(pokeName.toLowerCase())) {
         return pokemon;
       }
     });
-    return pokeByName;
   }
 
   getById(pokeId: number): Pokemon {
-    let pokeById: Pokemon[] = this.pokemons.filter(pokemon => {
+    const pokeById: Pokemon[] = this.pokemons.filter(pokemon => {
       if (pokemon.id === pokeId) {
         return pokemon;
       }

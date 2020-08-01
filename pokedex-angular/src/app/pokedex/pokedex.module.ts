@@ -9,6 +9,7 @@ import { BorderBoldDirective } from './border-style.directive';
 import { BorderBottomDirective } from './border-style-bottom.directive';
 import { SearchPokemonComponent } from './search-pokemon/search-pokemon.component';
 import { PokedexRoutingModule } from './pokedex-routing.module';
+import { EditInfoComponent } from './edit-info/edit-info.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PokedexRoutingModule } from './pokedex-routing.module';
     PokemonListItemComponent,
     BorderBoldDirective,
     BorderBottomDirective,
-    SearchPokemonComponent
+    SearchPokemonComponent,
+    EditInfoComponent
   ],
   imports: [
     CommonModule,
