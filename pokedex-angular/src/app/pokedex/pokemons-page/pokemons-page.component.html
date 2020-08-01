@@ -1,10 +1,12 @@
 <div [ngSwitch]="view" class="container mt-5 mb-5">
   <div class="pokemons-page__buttons-view">
-    <button class="btn btn-outline-secondary" (click)="toggleView('gallery')">Gallery</button>
-    <button class="btn btn-outline-secondary" (click)="toggleView('list')">List</button>
+    <button class="btn btn-outline-secondary mr-1" [ngClass]="{active: galleryActive}" (click)="
+      toggleView('gallery')">Gallery</button>
+    <button class="btn btn-outline-secondary" [ngClass]="{active: listActive}" (click)="
+      toggleView('list')">List</button>
   </div>
   <div class="pokemons-page__search">
-    <app-search-pokemon></app-search-pokemon>
+    <app-search-pokemon (filterPoke)="pokemonPageSearchOnClick($event)"></app-search-pokemon>
   </div>
   <ng-template ngSwitchCase="gallery">
     <div class="row cols-3 cols-md-2 cols-sm-1 justify-content-around pokemons-page__card">
@@ -15,9 +17,8 @@
   </ng-template>
   <ng-template ngSwitchCase="list">
     <ul class="list-group" *ngFor="let pokemon of pokemons">
-      <app-pokemon-list-item [pokemon]="pokemon" (catchPoke)="pokemonPageCatchOnClick(pokemon)"></app-pokemon-list-item>
+      <app-pokemon-list-item [pokemon]="pokemon" (catchPoke)="pokemonPageCatchOnClick(pokemon)">
+      </app-pokemon-list-item>
     </ul>
   </ng-template>
-  <app-pokemon-profile [pokemon]="pokemon" (catchPoke)="pokemonPageCatchOnClick(pokemon)">
-  </app-pokemon-profile>
 </div>

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { PokemonProfileComponent } from './pokemon-profile/pokemon-profile.component';
@@ -7,7 +8,8 @@ import { PokemonListItemComponent } from './pokemon-list-item/pokemon-list-item.
 import { BorderBoldDirective } from './border-style.directive';
 import { BorderBottomDirective } from './border-style-bottom.directive';
 import { SearchPokemonComponent } from './search-pokemon/search-pokemon.component';
-
+import { PokedexRoutingModule } from './pokedex-routing.module';
+import { EditInfoComponent } from './edit-info/edit-info.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,17 @@ import { SearchPokemonComponent } from './search-pokemon/search-pokemon.componen
     PokemonListItemComponent,
     BorderBoldDirective,
     BorderBottomDirective,
-    SearchPokemonComponent
+    SearchPokemonComponent,
+    EditInfoComponent
   ],
-  imports: [CommonModule],
-  exports: [PokemonProfileComponent,
-    PokemonsPageComponent]
+  imports: [
+    CommonModule,
+    FormsModule,
+    PokedexRoutingModule
+  ],
+  exports: [
+    PokemonProfileComponent,
+    PokemonsPageComponent,
+  ]
 })
 export class PokedexModule { }

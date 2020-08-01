@@ -9,15 +9,21 @@
           <h5 class="card-title pokemon-profile__card-title">{{pokemon.name}}</h5>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">id: {{pokemon.id}}</li>
-          <li class="list-group-item">status: {{pokemon.isCaught}}</li>
+          <li class="list-group-item">Id: {{pokemon.id}}</li>
+          <li class="list-group-item">Damage: {{pokemon.damage}}</li>
+          <li class="list-group-item">Catch status: {{pokemon.isCaught}}</li>
           <li class="list-group-item"> Catch date: {{formatCatchDate(pokemon.catchDate)}}</li>
         </ul>
         <div class="card-body">
           <div class="card-button mt-3">
-            <button class="btn catch-button col-lg-2 col-md-2"
-              (click)="onCatchBtnClick()">{{getStatus(pokemon)}}</button>
+            <button class="btn button-block col-lg-2 col-md-2"
+              (click)="onCatchBtnClick(pokemon)">{{getStatus(pokemon)}}</button>
           </div>
+          <a [routerLink]="['/pokemon-profile', pokemon.id, 'edit']">
+            <div class="card-button mt-3">
+              <button class="btn button-block col-lg-2 col-md-2">Edit</button>
+            </div>
+          </a>
         </div>
       </div>
     </div>

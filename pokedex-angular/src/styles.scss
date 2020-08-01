@@ -5,7 +5,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @import "./variables.scss";
 
-.catch-button {
+.button-block {
   height: 38px;
   padding: 6px;
   background: $color-secondary;
@@ -23,6 +23,45 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     transform: translateY(3px);
     box-shadow: 0 1rem 2rem rgba($color-primary, 0.2);
     color: $color-white;
+    transition: all 0.2s;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 100%;
+  }
+
+  &:disabled {
+    background: rgba($color-secondary, 0.5);
+
+    &:hover {
+      transform: none;
+    }
+
+    &:active {
+      transform: none;
+    }
+  }
+}
+
+.button-block-white {
+  height: 38px;
+  padding: 6px;
+  background: rgba($color-tertiary, 0.7);
+  border-radius: 5px;
+  color: $color-secondary;
+  border: 1px solid $color-secondary;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-primary, 0.2);
+    color: $color-secondary;
+    transition: all 0.2s;
+  }
+
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 1rem 2rem rgba($color-primary, 0.2);
+    color: $color-secondary;
     transition: all 0.2s;
   }
 

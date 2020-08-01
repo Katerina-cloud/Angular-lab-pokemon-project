@@ -1,0 +1,26 @@
+@import "../../../variables.scss";
+
+.edit-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba($color-primary, 0.5);
+
+  .form-control {
+  border: 0;
+  border-bottom: 1px solid #FFFFFF;
+  border-top: 1px solid #FFFFFF;
+  /* padding: 25px 20px; */
+  background: transparent;
+  border-radius: 0;
+  color:#FFFFFF;
+  }
+
+  label {
+    align-self: center;
+    margin: 0 0 16px;
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
+}

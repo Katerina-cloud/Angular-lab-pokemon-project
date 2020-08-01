@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Pokemon } from '../types/Pokemon';
+import { AccountsService } from '../accounts.service';
 
 @Component({
   selector: 'app-pokemon-profile',
@@ -7,17 +9,21 @@ import { Pokemon } from '../types/Pokemon';
   styleUrls: ['./pokemon-profile.component.scss']
 })
 export class PokemonProfileComponent implements OnInit {
-  @Input() pokemon: Pokemon;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  pokemon: Pokemon;
   @Output() catchPoke = new EventEmitter<Pokemon>();
 
-  onCatchBtnClick() {
-    this.catchPoke.emit();
+  constructor(private accountsService: AccountsService, private route: ActivatedRoute) {
+  }
+
+  ngOnInit(): void {
+    const id = this.route.snapshot.params.id;
+    this.pokemon = this.accountsService.getById(Number(id));
+  }
+
+  onCatchBtnClick(pokemon: Pokemon): void {
+    pokemon.isCaught = !pokemon.isCaught;
+    const status: string = pokemon.isCaught ? "caught" : "released";
+    console.log(`Pokemon ${pokemon.name} was ${status}`);
   }
 
   getStatus(pokemon: Pokemon): string {
@@ -27,12 +33,11 @@ export class PokemonProfileComponent implements OnInit {
   formatCatchDate(date) {
     if (date) {
       const catchData = new Date(date);
-      let day = "0" + catchData.getDate();
-      let month = "0" + (catchData.getMonth() + 1);
-      let year = catchData.getFullYear();
+      const day = "0" + catchData.getDate();
+      const month = "0" + (catchData.getMonth() + 1);
+      const year = catchData.getFullYear();
 
       return `${day.substr(-2)}.${month.substr(-2)}.${year}`;
     }
   }
-
 }
