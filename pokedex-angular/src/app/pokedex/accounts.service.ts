@@ -71,6 +71,7 @@ export class AccountsService {
     return this.pokemons;
   }
 
+
   filterByName(pokeName: string): Pokemon[] {
     return this.pokemons.filter(pokemon => {
       if (pokemon.name.includes(pokeName.toLowerCase())) {
